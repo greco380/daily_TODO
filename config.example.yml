@@ -1,0 +1,30 @@
+# Example configuration for Daily TODO
+# Copy this file to `config.yml` and update the values
+
+# Path to Google service account credentials JSON
+google_credentials_path: "path/to/credentials.json"
+
+# Trello API credentials
+trello_api_key: "YOUR_TRELLO_API_KEY"
+trello_token: "YOUR_TRELLO_TOKEN"
+
+# Asana personal access token
+asana_access_token: "YOUR_ASANA_TOKEN"
+
+# OpenAI API key used for summarization and transcription
+openai_api_key: "YOUR_OPENAI_API_KEY"
+
+# Time of day to deliver the summary email (24h format)
+delivery_time: "08:00"
+
+# Email settings for outgoing messages
+email:
+  smtp_server: "smtp.example.com"
+  smtp_port: 587
+  username: "user@example.com"
+  password: "securepassword"
+  recipient: "recipient@example.com"
+
+# Additional arbitrary settings can be placed here
+other_settings:
+  sample: "value"
