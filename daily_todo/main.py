@@ -9,6 +9,9 @@ from .integrations.asana import get_tasks_due_today as asana_tasks
 from .aggregator import aggregate
 from .llm import summarize
 from .email_formatter import format_email
+from .email_dispatch import send_email
+
+DEFAULT_SUBJECT = "Daily Summary"
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +29,11 @@ def run_daily_summary(cfg: config.UserConfig):
     summary = summarize(merged, cfg.openai_api_key)
     email_body = format_email(summary, merged)
     logger.info("Generated email:\n%s", email_body)
-    # TODO: send email using cfg.email settings
+    subject = DEFAULT_SUBJECT
+    try:
+        send_email(cfg.email, subject, email_body)
+    except Exception:
+        logger.exception("Error sending email")
 
 
 if __name__ == "__main__":
