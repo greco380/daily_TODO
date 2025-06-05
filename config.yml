@@ -1,0 +1,12 @@
+email:
+  smtp_server: smtp.example.com
+  smtp_port: 587
+  username: your_username
+  password: your_password
+  recipient: recipient@example.com
+
+google_credentials_path: path/to/credentials.json
+trello_api_key: your_trello_key
+trello_token: your_trello_token
+asana_access_token: your_asana_token
+openai_api_key: your_openai_key
